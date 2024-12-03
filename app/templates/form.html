@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <div class="">
+        <h1>Formulaire API</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.hour.label }}, Entrez l'heure (format: HH:MM): <br>
+                {{ form.hour(size=30) }}
+            </div>
+            <div>
+                {{ form.temperature.label }}, Entrez la température (°C):<br>
+                {{ form.temperature(size=30) }}
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+
+        {% if response_data %}
+            <h2>Réponse :</h2>
+            <pre>{{ response_data | tojson(indent=2) }}</pre>
+        {% endif %}
+    </div>
+</body>
+</html>
