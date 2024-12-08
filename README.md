@@ -13,3 +13,10 @@ $ pip install -r requirements.txt
 ```bash
 $ python my_app.py
 ```
+
+## generete pkl model energy_model.pkl
+
+```bash
+$ cd app
+$ python model.py
+```
