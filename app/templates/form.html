@@ -13,12 +13,23 @@
         <form method="POST">
             {{ form.hidden_tag() }}
             <div>
-                {{ form.hour.label }}, Entrez l'heure (format: HH:MM): <br>
-                {{ form.hour(size=30) }}
+                {{ form.humidity.label }}.<br>
+                {{ form.humidity(size=30) }}
             </div>
             <div>
                 {{ form.temperature.label }}, Entrez la température (°C):<br>
                 {{ form.temperature(size=30) }}
+            </div>
+            <div>
+                <label for="zone">{{ form.zone.label }}</label>
+                {{ form.zone() }}  
+                {% if form.zone.errors %}
+                <ul>
+                    {% for error in form.zone.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}  
             </div>
             <div>
                 {{ form.submit() }}
