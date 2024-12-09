@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 import joblib
 
 # Charger les données
-df = pd.read_csv('powerconsumption.csv')
+df = pd.read_csv('app/powerconsumption.csv')
 
 # Convertir 'Datetime' en type datetime
 df['Datetime'] = pd.to_datetime(df['Datetime'])
